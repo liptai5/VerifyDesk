@@ -52,7 +52,7 @@ You need **[Node.js 20.12 or newer](https://nodejs.org)** and Chrome or Edge. A 
 **Install**
 
 ```bash
-git clone <this repo>
+git clone https://github.com/liptai5/VerifyDesk.git
 cd verifydesk
 npm install
 ```
