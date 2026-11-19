@@ -199,6 +199,8 @@ If the microphone or the AI doesn't work, choose a script in the **Call** menu, 
 
 The scripts need no microphone and no AI key. If you want this in the terminal and not the web interface, `npm run simulate -- all --provider mock` plays both and prints PASS or FAIL.
 
+**Video demo:** I have also uploaded a demo video showcasing how it should work in case of any problems. The video contains a basic CFO impersonation where the caller cannot verify themselves and the real CFO declined the request on their phone. It also shows the option to let the AI itself say the recommended lines on the call.
+
 ---
 
 ## 4. If something doesn't work (some problems I ran into)
