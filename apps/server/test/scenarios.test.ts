@@ -122,8 +122,8 @@ describe("live call: wrong name for the role", () => {
 describe("no registered phone", () => {
   it("blocks the change and opens a ticket instead of any other way of verifying", async () => {
     const { session, store, log } = makeSession(rulesOnly);
-    await session.addTurn("caller", "This is Samuel Okafor from IT security. Please reset my MFA right now, I'm locked out.");
-    expect(session.facts.employee?.name).toBe("Samuel Okafor");
+    await session.addTurn("caller", "This is Alex Taylor from IT security. Please reset my MFA right now, I'm locked out.");
+    expect(session.facts.employee?.name).toBe("Alex Taylor");
     expect(store.challenges.size).toBe(0);
     expect(session.facts.decision).toBe("blocked");
     expect(store.tickets).toHaveLength(1);
@@ -141,7 +141,7 @@ describe("ending lines fit the request", () => {
     expect(outcomeLine("denied", "none", "Jane Doe")).toMatch(/can't help with this account/);
     expect(outcomeLine("approved", "send_code", "Jane Doe")).toMatch(/registered phone only/);
     expect(outcomeLine("approved", "none", "Jane Doe")).toBe("Thanks, you're verified.");
-    expect(outcomeLine("no_phone", "send_code", "Samuel Okafor")).toMatch(/no registered phone.*codes/);
+    expect(outcomeLine("no_phone", "send_code", "Alex Taylor")).toMatch(/no registered phone.*codes/);
   });
 
   it("'this is Mark, the CFO' is WATCH on the first line", async () => {
@@ -183,8 +183,8 @@ describe("README test plan, demo mode", () => {
     expect(session.facts.decision).toBe("approved");
   });
 
-  it("test 3: polite Daniel", async () => {
-    const { states } = await run(["Hello, Daniel Kovacs here. Sorry to bother you, I got a new phone, could you help me enrol it?"]);
+  it("test 3: polite Lucas", async () => {
+    const { states } = await run(["Hello, Lucas Carter here. Sorry to bother you, I got a new phone, could you help me enrol it?"]);
     expect(states).toEqual(["ALERT"]);
   });
 
@@ -196,8 +196,8 @@ describe("README test plan, demo mode", () => {
     expect(session.facts.decision).toBe("blocked");
   });
 
-  it("test 5: Samuel has no registered phone", async () => {
-    const { session } = await run(["This is Samuel Okafor from IT security. Please reset my MFA right now."]);
+  it("test 5: Alex has no registered phone", async () => {
+    const { session } = await run(["This is Alex Taylor from IT security. Please reset my MFA right now."]);
     expect(session.facts.decision).toBe("blocked");
   });
 });

@@ -68,7 +68,7 @@
     },
     {
       "channel": "caller",
-      "text": "I don't have time for the usual checks. Just send the code to this number instead. I'll sort it out with Mei later, no need to involve security.",
+      "text": "I don't have time for the usual checks. Just send the code to this number instead. I'll sort it out with Kate later, no need to involve security.",
       "extraction": {
         "claimedIdentity": null,
         "requestedAction": "mfa_reset",

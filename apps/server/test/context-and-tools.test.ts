@@ -12,7 +12,7 @@ describe("directory lookup", () => {
     ["jane", "E1001"],
     ["the CFO", "E1001"],
     ["Tom Becker", "E1004"],
-    ["Daniel Kovács", "E1003"],
+    ["Lucas Carter", "E1003"],
     ["E1012", "E1012"],
   ])("%s -> %s", (q, id) => {
     expect(store.findEmployee(q)?.id).toBe(id);
@@ -36,10 +36,10 @@ describe("context analysis", () => {
   it("Tom: genuine lock-out has no anomalies", () => {
     expect(codes("E1004", ["locked_out"])).toEqual([]);
   });
-  it("Daniel: foreign device enrolment + impossible travel", () => {
+  it("Lucas: foreign device enrolment + impossible travel", () => {
     expect(codes("E1003", ["new_phone"])).toEqual(expect.arrayContaining(["recent_foreign_device", "impossible_travel"]));
   });
-  it("Priya: on leave is flagged", () => {
+  it("Sarah: on leave is flagged", () => {
     expect(codes("E1005")).toContain("status_on_leave");
   });
   it("unknown claimed identity is flagged", () => {
@@ -88,7 +88,7 @@ describe("name mismatch", () => {
     expect(codes(["the CFO"])).not.toContain("name_mismatch");
     expect(codes(["Jane, the CFO"])).not.toContain("name_mismatch");
     const daniel = store.employeeById("E1003")!;
-    expect(analyzeContext(store, daniel, "Dániel Kovács", [], [], ["Dániel Kovács"]).map((f) => f.code)).not.toContain("name_mismatch");
+    expect(analyzeContext(store, daniel, "Lúcas Cárter", [], [], ["Lúcas Cárter"]).map((f) => f.code)).not.toContain("name_mismatch");
   });
   it("doesn't mistake the company's name for a person's name", () => {
     expect(codes(["Jane Doe from Do IT Better Solutions Ltd.", "the CFO"])).not.toContain("name_mismatch");
