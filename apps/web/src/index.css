@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* Colours, fonts and the few custom styles. The banner is the only loud element; change colours here. */
+@theme {
+  --color-paper: #eef1f4;
+  --color-panel: #f8fafb;
+  --color-ink: #1c2733;
+  --color-muted: #5b6775;
+  --color-line: #ccd4dd;
+  --color-safe: #2f7d5b;
+  --color-watch: #b8790b;
+  --color-alert: #c2362b;
+  --color-uncertain: #6b5ca5;
+  --color-voice: #1f5fa8;
+
+  --font-sans: "Public Sans Variable", "Segoe UI", system-ui, sans-serif;
+  --font-signal: "Barlow Condensed", "Arial Narrow", sans-serif;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-voice);
+  outline-offset: 2px;
+}
+
+.signal {
+  transition: background-color 450ms ease, color 450ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signal {
+    transition: none;
+  }
+}
+
+mark.evidence {
+  background: transparent;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}

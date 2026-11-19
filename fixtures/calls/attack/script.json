@@ -1,0 +1,88 @@
+{
+  "title": "Attack: fake CFO wants MFA moved",
+  "description": "Scattered-Spider-style vishing. A cloned 'Jane Doe (CFO)' pressures the help desk to move MFA to a new number. Her real phone was active 10 minutes ago in Budapest.",
+  "expected": {
+    "finalState": "ALERT",
+    "alertByCallerTurn": 2,
+    "deviceEmployeeId": "E1001",
+    "devicePress": "deny",
+    "decision": "blocked"
+  },
+  "turns": [
+    {
+      "channel": "agent",
+      "text": "Do IT Better Solutions service desk, this is Peter. How can I help?",
+      "audio": "01-agent.wav",
+      "voice": "kokoro:am_michael"
+    },
+    {
+      "channel": "caller",
+      "text": "Hi Peter, this is Jane Doe, the CFO. I'm at the airport and I'm boarding in ten minutes.",
+      "extraction": {
+        "claimedIdentity": "Jane Doe",
+        "requestedAction": "none",
+        "tactics": [
+          "urgency",
+          "authority"
+        ],
+        "situation": [
+          "traveling"
+        ],
+        "evidenceQuote": "boarding in ten minutes",
+        "confidence": 0.9
+      },
+      "audio": "02-caller.wav",
+      "voice": "kokoro:af_bella"
+    },
+    {
+      "channel": "agent",
+      "text": "Okay, what's the problem?",
+      "audio": "03-agent.wav",
+      "voice": "kokoro:am_michael"
+    },
+    {
+      "channel": "caller",
+      "text": "My phone was stolen this morning, so I can't get my MFA codes. I need MFA moved to my new number right now.",
+      "extraction": {
+        "claimedIdentity": null,
+        "requestedAction": "mfa_reset",
+        "tactics": [
+          "urgency",
+          "new_contact_channel"
+        ],
+        "situation": [
+          "phone_lost",
+          "new_phone"
+        ],
+        "evidenceQuote": "I need MFA moved to my new number right now",
+        "confidence": 0.95
+      },
+      "audio": "04-caller.wav",
+      "voice": "kokoro:af_bella"
+    },
+    {
+      "channel": "agent",
+      "text": "I understand. I'll need to verify your identity before I can change anything.",
+      "audio": "05-agent.wav",
+      "voice": "kokoro:am_michael"
+    },
+    {
+      "channel": "caller",
+      "text": "I don't have time for the usual checks. Just send the code to this number instead. I'll sort it out with Mei later, no need to involve security.",
+      "extraction": {
+        "claimedIdentity": null,
+        "requestedAction": "mfa_reset",
+        "tactics": [
+          "process_bypass",
+          "new_contact_channel",
+          "isolation"
+        ],
+        "situation": [],
+        "evidenceQuote": "I don't have time for the usual checks",
+        "confidence": 0.95
+      },
+      "audio": "06-caller.wav",
+      "voice": "kokoro:af_bella"
+    }
+  ]
+}

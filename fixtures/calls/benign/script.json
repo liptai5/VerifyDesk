@@ -1,0 +1,75 @@
+{
+  "title": "Benign twin: genuinely locked out",
+  "description": "Tom Becker really is locked out after 5 failed logins in Debrecen. Same kind of request, no pressure, consistent context. He approves the push and gets his reset with no friction.",
+  "expected": {
+    "finalState": "SAFE",
+    "neverAlert": true,
+    "deviceEmployeeId": "E1004",
+    "devicePress": "approve",
+    "decision": "approved"
+  },
+  "turns": [
+    {
+      "channel": "agent",
+      "text": "Do IT Better Solutions service desk, this is Peter. How can I help?",
+      "audio": "01-agent.wav",
+      "voice": "kokoro:am_michael"
+    },
+    {
+      "channel": "caller",
+      "text": "Hi Peter, it's Tom Becker from the Debrecen warehouse.",
+      "extraction": {
+        "claimedIdentity": "Tom Becker",
+        "requestedAction": "none",
+        "tactics": [],
+        "situation": [],
+        "evidenceQuote": "",
+        "confidence": 0.95
+      },
+      "audio": "02-caller.wav",
+      "voice": "kokoro:am_adam"
+    },
+    {
+      "channel": "agent",
+      "text": "Hi Tom, what can I do for you?",
+      "audio": "03-agent.wav",
+      "voice": "kokoro:am_michael"
+    },
+    {
+      "channel": "caller",
+      "text": "I think I'm locked out. I typed my password wrong a few times after the weekend and now it won't let me in. Could you reset my password?",
+      "extraction": {
+        "claimedIdentity": null,
+        "requestedAction": "password_reset",
+        "tactics": [],
+        "situation": [
+          "locked_out"
+        ],
+        "evidenceQuote": "Could you reset my password?",
+        "confidence": 0.95
+      },
+      "audio": "04-caller.wav",
+      "voice": "kokoro:am_adam"
+    },
+    {
+      "channel": "agent",
+      "text": "Sure, let's get you verified first.",
+      "audio": "05-agent.wav",
+      "voice": "kokoro:am_michael"
+    },
+    {
+      "channel": "caller",
+      "text": "No problem, I've got my phone right here.",
+      "extraction": {
+        "claimedIdentity": null,
+        "requestedAction": "none",
+        "tactics": [],
+        "situation": [],
+        "evidenceQuote": "",
+        "confidence": 0.9
+      },
+      "audio": "06-caller.wav",
+      "voice": "kokoro:am_adam"
+    }
+  ]
+}

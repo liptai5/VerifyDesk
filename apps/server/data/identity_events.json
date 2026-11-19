@@ -1,0 +1,14 @@
+[
+  { "id": "IE-001", "employeeId": "E1001", "type": "mfa_success", "minutesAgo": 10, "location": "Budapest", "detail": "Push approved on registered iPhone (Outlook sign-in)" },
+  { "id": "IE-002", "employeeId": "E1001", "type": "login_success", "minutesAgo": 25, "location": "Budapest", "detail": "Corporate laptop, office network" },
+  { "id": "IE-003", "employeeId": "E1004", "type": "login_failed", "minutesAgo": 42, "location": "Debrecen", "detail": "Wrong password (1/5)" },
+  { "id": "IE-004", "employeeId": "E1004", "type": "login_failed", "minutesAgo": 40, "location": "Debrecen", "detail": "Wrong password (3/5)" },
+  { "id": "IE-005", "employeeId": "E1004", "type": "login_failed", "minutesAgo": 38, "location": "Debrecen", "detail": "Wrong password (5/5)" },
+  { "id": "IE-006", "employeeId": "E1004", "type": "account_locked", "minutesAgo": 38, "location": "Debrecen", "detail": "Locked after 5 failed attempts" },
+  { "id": "IE-007", "employeeId": "E1003", "type": "device_added", "minutesAgo": 120, "location": "Sofia", "detail": "New phone enrolled via self-service" },
+  { "id": "IE-008", "employeeId": "E1003", "type": "login_failed", "minutesAgo": 95, "location": "Sofia", "detail": "Impossible travel flag: Vienna -> Sofia" },
+  { "id": "IE-009", "employeeId": "E1006", "type": "device_added", "minutesAgo": 130, "location": "Milan", "detail": "Phone replacement, ticket HD-2291" },
+  { "id": "IE-010", "employeeId": "E1005", "type": "login_success", "minutesAgo": 20160, "location": "Budapest", "detail": "Last sign-in before leave" },
+  { "id": "IE-011", "employeeId": "E1008", "type": "login_success", "minutesAgo": 15, "location": "Budapest" },
+  { "id": "IE-012", "employeeId": "E1012", "type": "mfa_success", "minutesAgo": 3, "location": "Budapest" }
+]

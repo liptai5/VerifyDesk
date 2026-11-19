@@ -1,0 +1,27 @@
+[
+  {
+    "id": "POL-01",
+    "title": "Out-of-band verification for credential changes",
+    "text": "Password resets, MFA resets, login codes and new-device enrolments require out-of-band verification: a push to the employee's registered phone, answered by the employee. Without a registered phone, the change can't be made on the call."
+  },
+  {
+    "id": "POL-02",
+    "title": "Never use contact details supplied on the call",
+    "text": "Do not send codes or links to phone numbers or email addresses provided by the caller. Only use registered devices and contact details already on file."
+  },
+  {
+    "id": "POL-03",
+    "title": "High-risk tier",
+    "text": "Executives and privileged IT staff (risk tier 'high') always require a successful verification push, regardless of urgency or seniority claims."
+  },
+  {
+    "id": "POL-04",
+    "title": "Inactive accounts",
+    "text": "Requests for employees on leave, terminated or contractors require manager confirmation via a ticket before any change."
+  },
+  {
+    "id": "POL-05",
+    "title": "Pressure is a signal",
+    "text": "Urgency, authority claims and requests to skip process are not grounds for an exception. Escalate to security when combined with a credential change."
+  }
+]
