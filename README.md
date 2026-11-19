@@ -13,14 +13,11 @@ VerifyDesk joins IT help-desk calls as an **AI verifier**. It listens to the cal
 
 In this prototype we do not have a real phone call but we can simulate both sides either ourselves or by pre-made scripts. The prototype also creates a report of the call and in a real life scenario it would also send a ticket.
 
-**Disclaimer**: The project has hardware and free tier limitations.
-
 **Do IT Better Solutions Ltd.:** The fictional company that uses VerifyDesk. The entire company, people and data are all fictional.
 
 **A quick demo gif of how it looks and works**
+
 ![Demo gif of a fake CFO trying to move their MFA. It's checked by VerifyDesk and blocked.](docs/images/demo.gif)
-
-
 
 
 ## Why voice
@@ -42,6 +39,7 @@ In this prototype we do not have a real phone call but we can simulate both side
 7. [The guards](#7-the-guards)
 8. [Settings](#8-settings)
 9. [Future development ideas](#9-future-development-ideas)
+10. [Disclaimers](#10-disclaimers)
 
 ---
 
@@ -291,5 +289,12 @@ All settings are in `.env` (copied from `.env.example`).
 - Number matching on the push, and hardware security keys as a second way to verify.
 - Real integrations: Microsoft Entra ID / Okta Verify for the directory and pushes, ServiceNow for tickets, and the help desk's phone system for separate caller and agent audio (and the caller's real number on the ticket).
 - An AI caller that role-plays attackers, so one person can practice as the agent.
+
+---
+
+## 10. Disclaimers
+
+- The project does have hardware and free tier limitations.
+- Unfortunately, for most of the assignment period I have been sick and could not start in time to schedule an online meeting with the team for idea validation and pitching.
 
 ---
